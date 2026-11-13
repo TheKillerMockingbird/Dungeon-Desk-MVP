@@ -1,16 +1,69 @@
-# React + Vite
+# Dungeon Desk
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React single-page application that provides quick reference for Dungeons & Dragons 5th Edition monsters, spells, and equipment using the official SRD data.
 
-Currently, two official plugins are available:
+**Live Demo:** _[add your Vercel URL here after deployment]_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Browse official SRD **Monsters**, **Spells**, and **Equipment**
+- Dynamic detail pages for each item
+- Responsive design (works on mobile and desktop)
+- Favorites system using React Context + localStorage
+- Loading and error states for API requests
+- Clean component architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the Oxlint configuration
+- React 18 + Vite
+- React Router v6
+- React Context API
+- CSS Modules
+- Vitest + React Testing Library
+- Deployed on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm
+
+### Installation
+
+bash
+git clone https://github.com/TheKillerMockingbird/Dungeon-Desk-MVP.git
+cd Dungeon-Desk-MVP
+npm install
+
+# Run locally
+Bash
+npm run dev
+Run tests
+Bash
+npm run test:run
+
+# API
+This project uses the free [D&D 5e SRD API](https://www.dnd5eapi.co/):
+
+Base URL: https://www.dnd5eapi.co/api
+No API key required
+Design Patterns Used
+React Context + Custom Hook (useFavorites) for global state
+Clear separation between UI components, pages, and API services
+Container/presentational style where appropriate
+
+## Known Limitations (MVP)
+ Favorites can be toggled but there is not yet a dedicated Favorites page
+ No user authentication
+ No search/filtering yet
+
+## Future Plans
+ Full Favorites page
+ Campaign notes
+ Search and filtering
+ User accounts (later sprint)
+
+
+Author
+Judah Olson
