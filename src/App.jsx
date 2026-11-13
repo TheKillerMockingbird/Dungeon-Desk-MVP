@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import MonstersList from './pages/MonstersList';
+import MonsterDetail from './pages/MonsterDetail';
 
-function MonstersList() {
-  return <h1>Monsters List (coming soon)</h1>;
-}
 function SpellsList() {
   return <h1>Spells List (coming soon)</h1>;
 }
@@ -19,9 +18,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="monsters" element={<MonstersList />} />
+          <Route path="monsters/:index" element={<MonsterDetail />} />
           <Route path="spells" element={<SpellsList />} />
           <Route path="equipment" element={<EquipmentList />} />
-          {/* Dynamic routes will go here later */}
         </Route>
       </Routes>
     </BrowserRouter>
