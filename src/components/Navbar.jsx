@@ -1,25 +1,41 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { useFavorites } from '../context/FavoritesContext';
 
 function Navbar() {
+  const { favorites } = useFavorites();
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <NavLink to="/">Dungeon Desk</NavLink>
+        {favorites.length > 0 && (
+          <span className={styles.favCount}>★ {favorites.length}</span>
+        )}
       </div>
+
       <ul className={styles.navLinks}>
         <li>
-          <NavLink to="/monsters" className={({ isActive }) => isActive ? styles.active : undefined}>
+          <NavLink
+            to="/monsters"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
             Monsters
           </NavLink>
         </li>
         <li>
-          <NavLink to="/spells" className={({ isActive }) => isActive ? styles.active : undefined}>
+          <NavLink
+            to="/spells"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
             Spells
           </NavLink>
         </li>
         <li>
-          <NavLink to="/equipment" className={({ isActive }) => isActive ? styles.active : undefined}>
+          <NavLink
+            to="/equipment"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
             Equipment
           </NavLink>
         </li>

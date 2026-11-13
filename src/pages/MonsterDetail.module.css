@@ -75,3 +75,19 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.favoriteBtn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.favoriteBtn:hover {
+  border-color: #38bdf8;
+  background-color: #273549;
+}

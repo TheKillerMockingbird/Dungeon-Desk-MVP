@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FavoritesProvider } from './context/FavoritesContext';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import MonstersList from './pages/MonstersList';
@@ -10,19 +11,21 @@ import EquipmentDetail from './pages/EquipmentDetail';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="monsters" element={<MonstersList />} />
-          <Route path="monsters/:index" element={<MonsterDetail />} />
-          <Route path="spells" element={<SpellsList />} />
-          <Route path="spells/:index" element={<SpellDetail />} />
-          <Route path="equipment" element={<EquipmentList />} />
-          <Route path="equipment/:index" element={<EquipmentDetail />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <FavoritesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="monsters" element={<MonstersList />} />
+            <Route path="monsters/:index" element={<MonsterDetail />} />
+            <Route path="spells" element={<SpellsList />} />
+            <Route path="spells/:index" element={<SpellDetail />} />
+            <Route path="equipment" element={<EquipmentList />} />
+            <Route path="equipment/:index" element={<EquipmentDetail />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </FavoritesProvider>
   );
 }
 

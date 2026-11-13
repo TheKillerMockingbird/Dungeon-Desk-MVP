@@ -4,9 +4,11 @@ import { getMonster } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import styles from './MonsterDetail.module.css';
+import { useFavorites } from '../context/FavoritesContext';
 
 function MonsterDetail() {
   const { index } = useParams();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [monster, setMonster] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,6 +40,19 @@ function MonsterDetail() {
           {monster.alignment ? `, ${monster.alignment}` : ''}
         </p>
       </header>
+
+      <button
+  onClick={() =>
+    toggleFavorite({
+      index: monster.index,
+      name: monster.name,
+      type: 'monster',
+    })
+  }
+  className={styles.favoriteBtn}
+>
+  {isFavorite(monster.index, 'monster') ? '★ Favorited' : '☆ Add to Favorites'}
+</button>
 
       <section className={styles.stats}>
         <div><strong>Challenge Rating</strong> {monster.challenge_rating}</div>
