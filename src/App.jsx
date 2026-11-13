@@ -5,10 +5,8 @@ import MonstersList from './pages/MonstersList';
 import MonsterDetail from './pages/MonsterDetail';
 import SpellsList from './pages/SpellsList';
 import SpellDetail from './pages/SpellDetail';
-
-function EquipmentList() {
-  return <h1>Equipment List (coming soon)</h1>;
-}
+import EquipmentList from './pages/EquipmentList';
+import EquipmentDetail from './pages/EquipmentDetail';
 
 function App() {
   return (
@@ -21,6 +19,7 @@ function App() {
           <Route path="spells" element={<SpellsList />} />
           <Route path="spells/:index" element={<SpellDetail />} />
           <Route path="equipment" element={<EquipmentList />} />
+          <Route path="equipment/:index" element={<EquipmentDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
